@@ -4,6 +4,7 @@ import { Button } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import { getSingleUser, updateUser } from "../redux/actions";
 import { useNavigate, useParams } from "react-router-dom";
+import "./Form.css";
 
 export default function EditUser() {
   const [feilds, setFeilds] = useState({
@@ -49,13 +50,13 @@ export default function EditUser() {
   };
 
   return (
-    <div style={{ padding: "20px" }}>
+    <div className="formContainer">
       <form onSubmit={handleSubmit}>
         <div>
-          <h1>Edit User</h1>
+          <h1 style={{ textAlign: "center", color: "green" }}>Edit User</h1>
         </div>
         <div>{error && <h3 style={{ color: "red" }}>{error}</h3>}</div>
-        <div>
+        <div className="textfeild">
           <TextField
             id="outlined-basic"
             label="Name"
@@ -63,10 +64,11 @@ export default function EditUser() {
             type="text"
             name="name"
             value={name || ""}
+            style={{ width: "100%" }}
             onChange={handleInputChange}
           />
         </div>
-        <div>
+        <div className="textfeild">
           <TextField
             id="outlined-basic"
             label="Email"
@@ -74,10 +76,11 @@ export default function EditUser() {
             type="email"
             name="email"
             value={email || ""}
+            style={{ width: "100%" }}
             onChange={handleInputChange}
           />
         </div>
-        <div>
+        <div className="textfeild">
           <TextField
             id="outlined-basic"
             label="Contact"
@@ -85,10 +88,11 @@ export default function EditUser() {
             type="text"
             name="contact"
             value={contact || ""}
+            style={{ width: "100%" }}
             onChange={handleInputChange}
           />
         </div>
-        <div>
+        <div className="textfeild">
           <TextField
             id="outlined-basic"
             label="Address"
@@ -96,10 +100,11 @@ export default function EditUser() {
             type="text"
             name="address"
             value={address || ""}
+            style={{ width: "100%" }}
             onChange={handleInputChange}
           />
         </div>
-        <div>
+        <div className="textfeild">
           <Button variant="contained" type="submit">
             Update
           </Button>

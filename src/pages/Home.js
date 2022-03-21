@@ -11,6 +11,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { deleteUser, loadUsers } from "../redux/actions";
 import { Button, ButtonGroup } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import Navbar from "../components/navbar/Navbar";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -60,61 +61,67 @@ export default function Home() {
   };
 
   return (
-    <div style={{ padding: "20px" }}>
-      <Button
-        variant="contained"
-        color="primary"
-        style={{ marginBottom: "20px" }}
-        onClick={() => navigate("/adduser")}
-      >
-        Add
-      </Button>
-      <TableContainer component={Paper}>
-        <Table sx={{ minWidth: 700 }} aria-label="customized table">
-          <TableHead>
-            <TableRow>
-              <StyledTableCell>Name</StyledTableCell>
-              <StyledTableCell align="right">Email</StyledTableCell>
-              <StyledTableCell align="right">Contact</StyledTableCell>
-              <StyledTableCell align="right">Address</StyledTableCell>
-              <StyledTableCell align="right">Action</StyledTableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {users &&
-              users.map((user) => (
-                <StyledTableRow key={user.id}>
-                  <StyledTableCell component="th" scope="row">
-                    {user.name}
-                  </StyledTableCell>
-                  <StyledTableCell align="right">{user.email}</StyledTableCell>
-                  <StyledTableCell align="right">
-                    {user.contact}
-                  </StyledTableCell>
-                  <StyledTableCell align="right">
-                    {user.address}
-                  </StyledTableCell>
-                  <StyledTableCell align="right">
-                    <ButtonGroup disableElevation variant="contained">
-                      <Button
-                        color="secondary"
-                        onClick={() => handleDelete(user.id)}
-                      >
-                        Delete
-                      </Button>
-                      <Button
-                        color="primary"
-                        onClick={() => navigate(`/edituser/${user.id}`)}
-                      >
-                        Edit
-                      </Button>
-                    </ButtonGroup>
-                  </StyledTableCell>
-                </StyledTableRow>
-              ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
+    <div>
+      <Navbar />
+      <div style={{ padding: "12px" }}>
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={() => navigate("/adduser")}
+        >
+          Add
+        </Button>
+      </div>
+      <div style={{ padding: "12px" }}>
+        <TableContainer component={Paper}>
+          <Table sx={{ minWidth: 700 }} aria-label="customized table">
+            <TableHead>
+              <TableRow>
+                <StyledTableCell>Name</StyledTableCell>
+                <StyledTableCell align="right">Email</StyledTableCell>
+                <StyledTableCell align="right">Contact</StyledTableCell>
+                <StyledTableCell align="right">Address</StyledTableCell>
+                <StyledTableCell align="right">Action</StyledTableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {users &&
+                users.map((user) => (
+                  <StyledTableRow key={user.id}>
+                    <StyledTableCell component="th" scope="row">
+                      {user.name}
+                    </StyledTableCell>
+                    <StyledTableCell align="right">
+                      {user.email}
+                    </StyledTableCell>
+                    <StyledTableCell align="right">
+                      {user.contact}
+                    </StyledTableCell>
+                    <StyledTableCell align="right">
+                      {user.address}
+                    </StyledTableCell>
+                    <StyledTableCell align="right">
+                      <ButtonGroup disableElevation variant="contained">
+                        <Button
+                          color="secondary"
+                          onClick={() => handleDelete(user.id)}
+                        >
+                          Delete
+                        </Button>
+                        <Button
+                          color="primary"
+                          onClick={() => navigate(`/edituser/${user.id}`)}
+                        >
+                          Edit
+                        </Button>
+                      </ButtonGroup>
+                    </StyledTableCell>
+                  </StyledTableRow>
+                ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
+      </div>
     </div>
   );
 }

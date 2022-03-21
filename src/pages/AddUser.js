@@ -4,6 +4,7 @@ import { Button } from "@mui/material";
 import { useDispatch } from "react-redux";
 import { addUser } from "../redux/actions";
 import { useNavigate } from "react-router-dom";
+import "./Form.css";
 
 export default function AddUser() {
   const [user, setUser] = useState({
@@ -37,13 +38,13 @@ export default function AddUser() {
   };
 
   return (
-    <div style={{ padding: "20px" }}>
+    <div className="formContainer">
       <form onSubmit={handleSubmit}>
         <div>
-          <h1>Add User</h1>
+          <h1 style={{ textAlign: "center", color: "green" }}>Add User</h1>
         </div>
         <div>{error && <h3 style={{ color: "red" }}>{error}</h3>}</div>
-        <div>
+        <div className="textfeild">
           <TextField
             id="outlined-basic"
             label="Name"
@@ -52,9 +53,10 @@ export default function AddUser() {
             name="name"
             value={name}
             onChange={handleInputChange}
+            style={{ width: "100%" }}
           />
         </div>
-        <div>
+        <div className="textfeild">
           <TextField
             id="outlined-basic"
             label="Email"
@@ -62,10 +64,11 @@ export default function AddUser() {
             type="email"
             name="email"
             value={email}
+            style={{ width: "100%" }}
             onChange={handleInputChange}
           />
         </div>
-        <div>
+        <div className="textfeild">
           <TextField
             id="outlined-basic"
             label="Contact"
@@ -73,10 +76,11 @@ export default function AddUser() {
             type="text"
             name="contact"
             value={contact}
+            style={{ width: "100%" }}
             onChange={handleInputChange}
           />
         </div>
-        <div>
+        <div className="textfeild">
           <TextField
             id="outlined-basic"
             label="Address"
@@ -84,10 +88,11 @@ export default function AddUser() {
             type="text"
             name="address"
             value={address}
+            style={{ width: "100%" }}
             onChange={handleInputChange}
           />
         </div>
-        <div>
+        <div className="textfeild">
           <Button variant="contained" type="submit">
             Submit
           </Button>

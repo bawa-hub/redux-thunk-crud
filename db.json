@@ -2,14 +2,14 @@
   "user": [
     {
       "name": "vikram kumar",
-      "address": "london",
+      "address": "beta-1, greater noida",
       "email": "test@test.com",
       "contact": "7676564536",
       "id": 1
     },
     {
       "name": "monu",
-      "address": "london",
+      "address": "alpha-2, greater noida",
       "email": "test@test.com",
       "contact": "7676564536",
       "id": 2
@@ -17,16 +17,65 @@
     {
       "name": "Vikram",
       "email": "email@email.com",
-      "address": "delhi",
+      "address": "bhagwanpur, muzaffarpur",
       "contact": "8787676564",
       "id": 3
     },
     {
       "name": "Neharika",
       "email": "neha@neha.com",
-      "address": "noida",
+      "address": "dwarka, delhi ",
       "contact": "9898787656",
       "id": 4
+    },
+    {
+      "name": "Aakash pandey",
+      "email": "admin@cedarwood.co.in",
+      "address": "sector 44, gurugram",
+      "contact": "9878786765",
+      "id": 5
+    },
+    {
+      "name": "monu",
+      "address": "alpha-2, greater noida",
+      "email": "test@test.com",
+      "contact": "7676564536",
+      "id": 6
+    },
+    {
+      "name": "Vikram",
+      "email": "email@email.com",
+      "address": "bhagwanpur, muzaffarpur",
+      "contact": "8787676564",
+      "id": 7
+    },
+    {
+      "name": "Neharika",
+      "email": "neha@neha.com",
+      "address": "dwarka, delhi ",
+      "contact": "9898787656",
+      "id": 8
+    },
+    {
+      "name": "Aakash pandey",
+      "email": "admin@cedarwood.co.in",
+      "address": "sector 44, gurugram",
+      "contact": "9878786765",
+      "id": 9
+    },
+    {
+      "name": "Neharika",
+      "email": "neha@neha.com",
+      "address": "dwarka, delhi ",
+      "contact": "9898787656",
+      "id": 4
+    },
+    {
+      "name": "Aakash pandey",
+      "email": "admin@cedarwood.co.in",
+      "address": "sector 44, gurugram",
+      "contact": "9878786765",
+      "id": 5
     }
   ]
 }
